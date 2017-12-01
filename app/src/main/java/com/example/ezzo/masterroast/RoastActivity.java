@@ -5,13 +5,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class RoastActivity extends AppCompatActivity {
+
+    private TextView quote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roast);
+
+        quote = (TextView) findViewById(R.id.firstquote);
+
 
         final MediaPlayer masterFirst = MediaPlayer.create(this, R.raw.azefirst);
         final MediaPlayer masterSecond = MediaPlayer.create(this, R.raw.azesecond);
