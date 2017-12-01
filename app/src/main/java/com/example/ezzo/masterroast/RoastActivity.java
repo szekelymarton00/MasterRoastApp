@@ -22,6 +22,7 @@ public class RoastActivity extends AppCompatActivity {
 
     private TextView quote;
     private Button randombutton;
+    private Button play_button_first;
     private TextView firstquote;
     private List<MediaPlayer> azeSounds;
 
@@ -35,15 +36,12 @@ public class RoastActivity extends AppCompatActivity {
         firstquote = (TextView) findViewById(R.id.firstquote);
         azeSounds = new ArrayList<>();
 
-
         //Sounds
         final MediaPlayer masterFirst = MediaPlayer.create(this, R.raw.azefirst);
         final MediaPlayer masterSecond = MediaPlayer.create(this, R.raw.azesecond);
         final MediaPlayer masterThird = MediaPlayer.create(this, R.raw.azethird);
         final MediaPlayer masterFourth = MediaPlayer.create(this, R.raw.azefourth);
         final MediaPlayer masterFifth = MediaPlayer.create(this, R.raw.azefifth);
-
-
 
         //List
         azeSounds.add(masterFirst);
@@ -53,8 +51,7 @@ public class RoastActivity extends AppCompatActivity {
         azeSounds.add(masterFifth);
 
         //Buttons
-        final Button play_button_first = (Button) this.findViewById(R.id.playfirstaze);
-
+        play_button_first = (Button) this.findViewById(R.id.playfirstaze);
         randombutton = (Button) this.findViewById(R.id.randombutton);
 
         play_button_first.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +116,5 @@ public class RoastActivity extends AppCompatActivity {
 
         });
     }
-
-
+    
 }
