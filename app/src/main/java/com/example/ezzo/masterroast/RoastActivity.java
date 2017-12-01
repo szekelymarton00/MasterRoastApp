@@ -96,9 +96,9 @@ public class RoastActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        QuoteApi chuckApi = retrofit.create(QuoteApi.class);
+        QuoteApi quoteApi = retrofit.create(QuoteApi.class);
 
-        Call<Quote> call = chuckApi.getQuote();
+        Call<Quote> call = quoteApi.getQuote();
 
         call.enqueue(new Callback<Quote>() {
             @Override
