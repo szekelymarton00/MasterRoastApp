@@ -7,3 +7,5 @@
 /build
 /captures
 .externalNativeBuild
+# for mac users
+.DS_Store
