@@ -39,10 +39,18 @@ public class RoastActivity extends AppCompatActivity {
         //Sounds
         final MediaPlayer masterFirst = MediaPlayer.create(this, R.raw.azefirst);
         final MediaPlayer masterSecond = MediaPlayer.create(this, R.raw.azesecond);
+        final MediaPlayer masterThird = MediaPlayer.create(this, R.raw.azethird);
+        final MediaPlayer masterFourth = MediaPlayer.create(this, R.raw.azefourth);
+        final MediaPlayer masterFifth = MediaPlayer.create(this, R.raw.azefifth);
+
+
 
         //List
         azeSounds.add(masterFirst);
         azeSounds.add(masterSecond);
+        azeSounds.add(masterThird);
+        azeSounds.add(masterFourth);
+        azeSounds.add(masterFifth);
 
         //Buttons
         final Button play_button_first = (Button) this.findViewById(R.id.playfirstaze);
@@ -52,12 +60,16 @@ public class RoastActivity extends AppCompatActivity {
         play_button_first.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Random randomGenerator = new Random();
-                int randomInt = randomGenerator.nextInt(2) + 1;
+                int randomInt = randomGenerator.nextInt(4) + 1;
 
                 switch (randomInt){
                     case 1: masterFirst.start();
                         break;
                     case 2: masterSecond.start();
+                        break;
+                    case 3: masterThird.start();
+                        break;
+                    case 4: masterFourth.start();
                         break;
                 }
 
@@ -70,6 +82,7 @@ public class RoastActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                masterFifth.start();
                 getQuote();
             }
         });
