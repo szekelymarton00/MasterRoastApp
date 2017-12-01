@@ -13,17 +13,24 @@ public class RoastActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roast);
 
-        final MediaPlayer mp = MediaPlayer.create(this, R.raw.cataclysm);
+        final MediaPlayer masterFirst = MediaPlayer.create(this, R.raw.azefirst);
+        final MediaPlayer masterSecond = MediaPlayer.create(this, R.raw.azesecond);
 
-        Button play_button = (Button) this.findViewById(R.id.playcata);
+        Button play_button_first = (Button) this.findViewById(R.id.playfirstaze);
+        Button play_button_second = (Button) this.findViewById(R.id.playsecondaze);
 
-        play_button.setOnClickListener(new View.OnClickListener() {
-
+        play_button_first.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mp.start();
+                masterFirst.start();
+            }
+        });
+
+        play_button_second.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                masterSecond.start();
             }
         });
     }
 
-    
+
 }
