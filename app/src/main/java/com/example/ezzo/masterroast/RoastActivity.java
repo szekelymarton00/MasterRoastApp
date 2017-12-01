@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -18,7 +21,8 @@ public class RoastActivity extends AppCompatActivity {
 
     private TextView quote;
     private Button randombutton;
-    TextView firstquote;
+    private TextView firstquote;
+    private List<MediaPlayer> azeSounds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +31,21 @@ public class RoastActivity extends AppCompatActivity {
         setContentView(R.layout.activity_roast);
 
         firstquote = (TextView) findViewById(R.id.firstquote);
+        azeSounds = new ArrayList<>();
 
 
+        //Sounds
         final MediaPlayer masterFirst = MediaPlayer.create(this, R.raw.azefirst);
         final MediaPlayer masterSecond = MediaPlayer.create(this, R.raw.azesecond);
 
+        //List
+        azeSounds.add(masterFirst);
+        azeSounds.add(masterSecond);
+
+        //Buttons
         final Button play_button_first = (Button) this.findViewById(R.id.playfirstaze);
         final Button play_button_second = (Button) this.findViewById(R.id.playsecondaze);
+
         randombutton = (Button) this.findViewById(R.id.randombutton);
 
         play_button_first.setOnClickListener(new View.OnClickListener() {
